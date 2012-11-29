@@ -12,6 +12,8 @@
 @interface ViewController : UIViewController <DWTagListDelegate>
 {
     DWTagList *tagList;
+    NSMutableArray *array;
+
 }
 
 @end

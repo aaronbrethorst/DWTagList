@@ -16,15 +16,18 @@
 
 - (void)selectedTag:(NSString *)tagName{
     
-    UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"Message" message:[NSString stringWithFormat:@"You tapped tag %@",tagName] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-    [al show];
+    //UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"Message" message:[NSString stringWithFormat:@"You tapped tag %@",tagName] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    //[al show];
+    [array removeObject:tagName];
+    [tagList setTags:array];
+    [self.view addSubview:tagList];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     tagList = [[DWTagList alloc] initWithFrame:CGRectMake(20.0f, 70.0f, 280.0f, 300.0f)];
-    NSArray *array = [[NSArray alloc] initWithObjects:@"Foo", @"Tag Label 1", @"Tag Label 2", @"Tag Label 3", @"Tag Label 4", @"Tag Label 5", nil];
+    array = [[NSMutableArray alloc] initWithObjects:@"Foo", @"Tag Label 1", @"Tag Label 2", @"Tag Label 3", @"Tag Label 4", @"Tag Label 5", nil];
     [tagList setTags:array];
     [tagList setDelegate:self];
     [self.view addSubview:tagList];
