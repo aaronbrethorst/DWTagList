@@ -8,7 +8,7 @@ Edit:
 Now with deletion and addition features also.
 
 
-![preview](http://i1339.photobucket.com/albums/o702/deepukjayan1/iOSSimulatorScreenshot29-Nov-2012104510PM-1.jpg"Preview")
+![preview](http://i1339.photobucket.com/albums/o702/deepukjayan1/iOSSimulatorScreenshot29-Nov-2012104510PM-1.jpg "Preview")
 
 ## Installation
 
