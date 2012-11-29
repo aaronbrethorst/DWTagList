@@ -20,7 +20,6 @@
     //[al show];
     [array removeObject:tagName];
     [tagList setTags:array];
-    [self.view addSubview:tagList];
 }
 
 - (void)viewDidLoad
@@ -35,6 +34,7 @@
 
 - (void)viewDidUnload
 {
+    [self setTagField:nil];
     [super viewDidUnload];
 }
 
@@ -47,4 +47,11 @@
     }
 }
 
+- (IBAction)addTag:(id)sender {
+    
+    if (!([self.tagField.text length] == 0)) {
+        [array addObject:self.tagField.text];
+        [tagList setTags:array];
+    }
+}
 @end

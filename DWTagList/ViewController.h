@@ -15,5 +15,7 @@
     NSMutableArray *array;
 
 }
+@property (strong, nonatomic) IBOutlet UITextField *tagField;
+- (IBAction)addTag:(id)sender;
 
 @end
