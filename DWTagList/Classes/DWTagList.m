@@ -101,7 +101,7 @@
         }
         [label setTextColor:TEXT_COLOR];
         [label setText:text];
-        [label setTextAlignment:UITextAlignmentCenter];
+        [label setTextAlignment:UITextAlignmentLeft];
         [label setShadowColor:TEXT_SHADOW_COLOR];
         [label setShadowOffset:TEXT_SHADOW_OFFSET];
         [label.layer setMasksToBounds:YES];
@@ -116,6 +116,10 @@
         [label addGestureRecognizer:gesture];
         
         [self addSubview:label];
+        
+        UIImageView *closeButton = [[UIImageView alloc]initWithFrame:CGRectMake(label.frame.origin.x + label.frame.size.width - 15, label.frame.origin.y + 3, 16, 16)];
+        closeButton.image = [UIImage imageNamed:@"close"];
+        [self addSubview:closeButton];
     }
     sizeFit = CGSizeMake(self.frame.size.width, totalHeight + 1.0f);
 }
