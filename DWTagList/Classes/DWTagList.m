@@ -7,6 +7,7 @@
 
 #import "DWTagList.h"
 #import <QuartzCore/QuartzCore.h>
+#import "paddingLabel.h"
 
 #define CORNER_RADIUS 10.0f
 #define LABEL_MARGIN 5.0f
@@ -73,12 +74,13 @@
     CGRect previousFrame = CGRectZero;
     BOOL gotPreviousFrame = NO;
     for (NSString *text in textArray) {
+
         CGSize textSize = [text sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:CGSizeMake(self.frame.size.width, 1500) lineBreakMode:UILineBreakModeWordWrap];
-        textSize.width += HORIZONTAL_PADDING*2;
+        textSize.width += HORIZONTAL_PADDING*2 + 7;
         textSize.height += VERTICAL_PADDING*2;
-        UILabel *label = nil;
+        paddingLabel *label = nil;
         if (!gotPreviousFrame) {
-            label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width, textSize.height)];
+            label = [[paddingLabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width + 7, textSize.height)];
             totalHeight = textSize.height;
         } else {
             CGRect newRect = CGRectZero;
@@ -89,7 +91,7 @@
                 newRect.origin = CGPointMake(previousFrame.origin.x + previousFrame.size.width + LABEL_MARGIN, previousFrame.origin.y);
             }
             newRect.size = textSize;
-            label = [[UILabel alloc] initWithFrame:newRect];
+            label = [[paddingLabel alloc] initWithFrame:newRect];
         }
         previousFrame = label.frame;
         gotPreviousFrame = YES;
@@ -114,10 +116,9 @@
         // if labelView is not set userInteractionEnabled, you must do so
         [label setUserInteractionEnabled:YES];
         [label addGestureRecognizer:gesture];
-        
         [self addSubview:label];
         
-        UIImageView *closeButton = [[UIImageView alloc]initWithFrame:CGRectMake(label.frame.origin.x + label.frame.size.width - 15, label.frame.origin.y + 3, 16, 16)];
+        UIImageView *closeButton = [[UIImageView alloc]initWithFrame:CGRectMake(label.frame.origin.x + label.frame.size.width - 17, label.frame.origin.y + 3, 16, 16)];
         closeButton.image = [UIImage imageNamed:@"close"];
         [self addSubview:closeButton];
     }

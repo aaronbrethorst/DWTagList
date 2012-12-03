@@ -20,6 +20,7 @@
 		04DEC62B15A898EF0034CA79 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DEC62A15A898EF0034CA79 /* QuartzCore.framework */; };
 		824B0A551667CC7100D36D75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 824B0A541667CC7100D36D75 /* Default-568h@2x.png */; };
 		82D3820A166CBDA800766AB0 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D38209166CBDA800766AB0 /* close.png */; };
+		82D3820F166CC81E00766AB0 /* paddingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D3820E166CC81E00766AB0 /* paddingLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		04DEC62A15A898EF0034CA79 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		824B0A541667CC7100D36D75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		82D38209166CBDA800766AB0 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		82D3820D166CC81E00766AB0 /* paddingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = paddingLabel.h; path = paddingLabel/paddingLabel.h; sourceTree = "<group>"; };
+		82D3820E166CC81E00766AB0 /* paddingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = paddingLabel.m; path = paddingLabel/paddingLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 		04DEC5F715A897B70034CA79 = {
 			isa = PBXGroup;
 			children = (
+				82D3820C166CC7EA00766AB0 /* paddingLabel */,
 				824B0A541667CC7100D36D75 /* Default-568h@2x.png */,
 				82D38209166CBDA800766AB0 /* close.png */,
 				04DEC60C15A897B80034CA79 /* DWTagList */,
@@ -122,6 +126,15 @@
 				04DEC62815A8988A0034CA79 /* DWTagList.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		82D3820C166CC7EA00766AB0 /* paddingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				82D3820D166CC81E00766AB0 /* paddingLabel.h */,
+				82D3820E166CC81E00766AB0 /* paddingLabel.m */,
+			);
+			name = paddingLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +207,7 @@
 				04DEC61715A897B80034CA79 /* AppDelegate.m in Sources */,
 				04DEC61A15A897B80034CA79 /* ViewController.m in Sources */,
 				04DEC62915A8988A0034CA79 /* DWTagList.m in Sources */,
+				82D3820F166CC81E00766AB0 /* paddingLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
