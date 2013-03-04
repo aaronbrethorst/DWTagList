@@ -1,6 +1,6 @@
 ﻿Thanks @domness for such a useful control. I made some changes and now it would look like this:
 
-![preview](https://www.dropbox.com/s/kcsjv5dhsj8qf9v/iOS%20Simulator%20Screen%20shot%2004-Mar-2013%2012.57.59%20PM.png "Preview")
+https://www.dropbox.com/s/kcsjv5dhsj8qf9v/iOS%20Simulator%20Screen%20shot%2004-Mar-2013%2012.57.59%20PM.png
 
 
 
