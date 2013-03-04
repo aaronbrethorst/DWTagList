@@ -14,11 +14,11 @@
 
 @implementation ViewController
 
-- (void)selectedTag:(NSString *)tagName{
+- (void)selectedTag:(UIImage *)image{
     
     //UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"Message" message:[NSString stringWithFormat:@"You tapped tag %@",tagName] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     //[al show];
-    [array removeObject:tagName];
+    [array removeObject:image];
     [tagList setTags:array];
 }
 
@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
     tagList = [[DWTagList alloc] initWithFrame:CGRectMake(20.0f, 70.0f, 280.0f, 300.0f)];
-    array = [[NSMutableArray alloc] initWithObjects:@"Foo", @"Tag Label 1", @"Tag Label 2", @"Tag Label 3", @"Tag Label 4", @"Tag Label 5", nil];
+    array = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"1.jpeg"],[UIImage imageNamed:@"2.jpeg"],[UIImage imageNamed:@"3.png"], nil];
     [tagList setTags:array];
     [tagList setDelegate:self];
     [self.view addSubview:tagList];

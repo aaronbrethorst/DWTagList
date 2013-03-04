@@ -58,29 +58,30 @@
 - (void)touchedTag:(id)sender{
     
     UITapGestureRecognizer *t = (UITapGestureRecognizer*)sender;
-    UILabel *label = (UILabel*)t.view;
+    UIImageView *label = (UIImageView*)t.view;
     
     if(label && self.delegate && [self.delegate respondsToSelector:@selector(selectedTag:)])
-        [self.delegate selectedTag:label.text];
+        [self.delegate selectedTag:label.image];
     
 }
 
 - (void)display
 {
-    for (UILabel *subview in [self subviews]) {
+    for (UIImageView *subview in [self subviews]) {
         [subview removeFromSuperview];
     }
     float totalHeight = 0;
     CGRect previousFrame = CGRectZero;
     BOOL gotPreviousFrame = NO;
-    for (NSString *text in textArray) {
+    for (UIImage *text in textArray) {
 
-        CGSize textSize = [text sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:CGSizeMake(self.frame.size.width, 1500) lineBreakMode:UILineBreakModeWordWrap];
+//        CGSize textSize = [text sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:CGSizeMake(self.frame.size.width, 1500) lineBreakMode:UILineBreakModeWordWrap];
+        CGSize textSize = CGSizeMake(text.size.width, text.size.height);
         textSize.width += HORIZONTAL_PADDING*2 + 7;
         textSize.height += VERTICAL_PADDING*2;
-        paddingLabel *label = nil;
+        UIImageView *label = nil;
         if (!gotPreviousFrame) {
-            label = [[paddingLabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width + 7, textSize.height)];
+            label = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, textSize.width + 7, textSize.height)];
             totalHeight = textSize.height;
         } else {
             CGRect newRect = CGRectZero;
@@ -91,21 +92,21 @@
                 newRect.origin = CGPointMake(previousFrame.origin.x + previousFrame.size.width + LABEL_MARGIN, previousFrame.origin.y);
             }
             newRect.size = textSize;
-            label = [[paddingLabel alloc] initWithFrame:newRect];
+            label = [[UIImageView alloc] initWithFrame:newRect];
         }
         previousFrame = label.frame;
         gotPreviousFrame = YES;
-        [label setFont:[UIFont systemFontOfSize:FONT_SIZE]];
+        //[label setFont:[UIFont systemFontOfSize:FONT_SIZE]];
         if (!lblBackgroundColor) {
             [label setBackgroundColor:BACKGROUND_COLOR];
         } else {
             [label setBackgroundColor:lblBackgroundColor];
         }
-        [label setTextColor:TEXT_COLOR];
-        [label setText:text];
-        [label setTextAlignment:UITextAlignmentLeft];
-        [label setShadowColor:TEXT_SHADOW_COLOR];
-        [label setShadowOffset:TEXT_SHADOW_OFFSET];
+//        [label setTextColor:TEXT_COLOR];
+        [label setImage:text];
+//        [label setTextAlignment:UITextAlignmentLeft];
+//        [label setShadowColor:TEXT_SHADOW_COLOR];
+//        [label setShadowOffset:TEXT_SHADOW_OFFSET];
         [label.layer setMasksToBounds:YES];
         [label.layer setCornerRadius:CORNER_RADIUS];
         [label.layer setBorderColor:BORDER_COLOR];

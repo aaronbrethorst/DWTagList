@@ -11,7 +11,7 @@
 
 @required
 
-- (void)selectedTag:(NSString*)tagName;
+- (void)selectedTag:(UIImage*)image;
 
 @end
 
